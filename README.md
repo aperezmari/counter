@@ -20,7 +20,7 @@
 ## 🗂️ Project Structure
 
 ```
-contador/
+counter/
 ├── cicd/                  # Extra tools/scripts for CI (e.g., Python)
 ├── node_modules/
 ├── public/                # Static assets

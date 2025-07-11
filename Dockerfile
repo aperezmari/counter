@@ -1,24 +1,14 @@
 FROM node:20-slim
-logs
+
 WORKDIR /app
-npm-debug.log*
+
 COPY package*.json ./
 RUN npm install
-pnpm-debug.log*
-COPY . .bug.log*
+
+COPY . .
 RUN npm run build
-node_modules
+
 RUN apt-get update && apt-get upgrade -y && apt-get clean && rm -rf /var/lib/apt/lists/*
-dist-ssr
+
 EXPOSE 4173
 CMD ["npm", "run", "preview", "--", "--host"]
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
